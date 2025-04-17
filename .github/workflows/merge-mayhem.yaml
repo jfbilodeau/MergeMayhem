@@ -30,7 +30,22 @@ jobs:
         run: dotnet restore MergeMayhem.csproj
 
       - name: Build
-        run: dotnet build MergeMayhem.csproj --configuration Release --no-restore
+        run: dotnet publish MergeMayhem.csproj -c Release -o ./bin/Release
 
       - name: Run tests
         run: dotnet test MergeMayhem.csproj --no-build --verbosity normal
+
+      - name: Save the artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: MergeMayhem
+          path: ./bin/Release
+
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: MergeMayhem
