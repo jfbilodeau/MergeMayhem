@@ -1,2 +1,20 @@
 {
+    "name": "LoadTest",
+    "type": "test",
+    "description": "Load test for the application",
+    "testType": "load",
+    "testConfig": {
+        "duration": 60,
+        "concurrency": 100,
+        "rampUpTime": 10,
+        "targetUrl": "https://mergemayhem.azurewebsites.net/"
+    },
+    "testScript": {
+        "scriptType": "JavaScript",
+        "scriptContent": "// Load test script\nconsole.log('Starting load test...');"
+    },
+    "reportingConfig": {
+        "reportFormat": ["json", "html"],
+        "reportDestination": "/reports/load-test"
+    }
 }

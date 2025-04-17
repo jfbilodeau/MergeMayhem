@@ -68,15 +68,14 @@ jobs:
           package: .
 
       - name: Start Azure Load Testing
-        uses: azure/azure-load-testing@v1
+        uses: azure/load-testing@v1
         with:
-          resource-group: ${{ vars.AZURE_RESOURCE_GROUP }}
-          load-test-name: ${{ vars.AZURE_LOAD_TEST_NAME }}
-          test-name: SlaComplianceTest
-          wait-for-completion: true
+          resourceGroup: ${{ vars.AZURE_RESOURCE_GROUP }}
+          loadtestResource: ${{ vars.AZURE_LOAD_TEST_NAME }}
+          loadtestConfigFile: LoadTest/LoadTest.json
           
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
-        with:
+        with:   
           name: LoadTestResults
-          path: ${{ github.workspace }}/loadTest
+          path: ${{ github.workspace }}//reports/load-test
