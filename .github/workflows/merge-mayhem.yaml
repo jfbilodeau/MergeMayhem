@@ -1,4 +1,4 @@
-...lname: Merge Mayhem CI
+name: Merge Mayhem CI
 
 # Trigger
 on:
