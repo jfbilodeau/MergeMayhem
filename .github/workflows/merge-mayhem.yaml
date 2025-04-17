@@ -1,5 +1,8 @@
 name: Merge Mayhem CI
 
+permissions:
+  id-token: write
+
 # Trigger
 on:
   push:
