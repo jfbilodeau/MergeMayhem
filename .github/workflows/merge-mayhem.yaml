@@ -67,4 +67,10 @@ jobs:
           app-name: ${{ vars.AZURE_WEBAPP_NAME }}
           package: .
 
-      
+      - name: Start Azure Load Testing
+        uses: azure/azure-load-testing@v1
+        with:
+          resource-group: ${{ vars.AZURE_RESOURCE_GROUP }}
+          load-test-name: ${{ vars.AZURE_LOAD_TEST_NAME }}
+          test-name: SlaComplianceTest
+          
