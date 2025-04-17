@@ -1,4 +1,4 @@
-name: Merge Mayhem CI
+...lname: Merge Mayhem CI
 
 # Trigger
 on:
@@ -36,7 +36,7 @@ jobs:
         run: dotnet test MergeMayhem.csproj --no-build --verbosity normal
 
       - name: Save the artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@4..
         with:
           name: MergeMayhem
           path: ./bin/Release
@@ -46,6 +46,6 @@ jobs:
     
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: MergeMayhem
