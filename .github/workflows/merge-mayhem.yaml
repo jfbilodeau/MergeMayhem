@@ -89,7 +89,7 @@ jobs:
         with:
           resourceGroup: ${{ vars.AZURE_RESOURCE_GROUP }}
           loadtestResource: ${{ vars.AZURE_LOAD_TEST_NAME }}
-          loadtestConfigFile: ./LoadTest/LoadTest.yaml
+          loadtestConfigFile: ./LoadTest/testScript.yaml
           
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
