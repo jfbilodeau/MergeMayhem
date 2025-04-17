@@ -36,7 +36,7 @@ jobs:
         run: dotnet test MergeMayhem.csproj --no-build --verbosity normal
 
       - name: Save the artifact
-        uses: actions/upload-artifact@4..
+        uses: actions/upload-artifact@4
         with:
           name: MergeMayhem
           path: ./bin/Release
