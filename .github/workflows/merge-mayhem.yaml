@@ -75,8 +75,6 @@ jobs:
     steps:
       - name: Checkout load test code
         uses: actions/checkout@v2
-        with:
-          path: LoadTest
 
       - name: Log in to Azure
         uses: azure/login@v2
